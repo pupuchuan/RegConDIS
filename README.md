@@ -1,17 +1,14 @@
 
 <div align="center">
 
-# Boosting Misalignment Medical Image Synthesis via Dual-branch Registration-guided and Anatomy Consistency Disentanglement Learning
+# Boosting Medical Image Synthesis via Registration-guided Consistency and Disentanglement Learning
 
 
 </div>
 
 ## Description
 
-This is the source code for MICCAI paper - "Boosting Misalignment Medical Image Synthesis via Dual-branch Registration-guided and Anatomy Consistency Disentanglement Learning"
-
-![overview](pic/overview.jpg)
-
+This is the source code for MICCAI paper (ID: 4155) - "Boosting Medical Image Synthesis via Registration-guided Consistency and Disentanglement Learning"
 
 ## Requirements
 
