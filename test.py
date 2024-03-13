@@ -15,7 +15,6 @@ import argparse
 code_dir = os.getcwd()
 parser = argparse.ArgumentParser()
 
-# 经常需要修改的接口
 parser.add_argument("--image_dir", type=str, default='', help="image_dir")
 parser.add_argument('--gpu', type=str, default='3', help='which gpu is used')
 parser.add_argument('--G_model', type=str, default='Unet', help='specify generator architecture [global | GLFANET | swin_trans ]')
@@ -65,8 +64,6 @@ opt = parser.parse_args()
 
 opt.prediction_results = os.path.join(opt.checkpoints_dir, f'prediction_results_{opt.dataset}_{opt.load_name}')  #
 opt.model_results = os.path.join(opt.checkpoints_dir, 'model_results')
-
-# pathlib.Path(opt.model_results).mkdir(parents=True, exist_ok=True)
 
 os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu
 str_ids = opt.gpu_ids.split(',')
