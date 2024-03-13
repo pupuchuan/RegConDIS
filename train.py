@@ -109,7 +109,6 @@ save_nii_epoch = [i for i in range(0, opt.max_epochs + 1, 20)]
 save_network_epoch = [i for i in range(50, opt.max_epochs, 10)]
 print('training')
 
-# 记录验证集的指标
 val_image_filenames = os.listdir(os.path.join(opt.image_dir, 'val'))
 val_pf = pd.DataFrame(index=(val_image_filenames + ['Mean']))
 
