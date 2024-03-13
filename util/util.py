@@ -113,14 +113,14 @@ def load_networks(opt, model):
             pretrained_netG_B2A_dict = {k: v for k, v in pretrained_netG_B2A_dict.items() if k in model_netG_B2A_dict}
             model_netG_B2A_dict.update(pretrained_netG_B2A_dict)
             model.netG_B2A.load_state_dict(
-                model_netG_B2A_dict)  # torch.load: 加载训练好的模型 load_state_dict: 将torch.load加载出来的数据加载到net中
+                model_netG_B2A_dict)  
 
             pretrained_netD_dict = state['netD_state_dict']
             model_netD_dict = model.netD.state_dict()
             pretrained_netD_dict = {k: v for k, v in pretrained_netD_dict.items() if k in model_netD_dict}
             model_netD_dict.update(pretrained_netD_dict)
             model.netD.load_state_dict(
-                model_netD_dict)  # torch.load: 加载训练好的模型 load_state_dict: 将torch.load加载出来的数据加载到net中
+                model_netD_dict) 
 
             model.optimizer_G.load_state_dict(state['optimizer_G'])
             model.optimizer_D_A.load_state_dict(state['optimizer_D_A'])
@@ -132,7 +132,7 @@ def load_networks(opt, model):
         model_netG_dict = model.netG.state_dict()
         pretrained_netG_dict = {k: v for k, v in pretrained_netG_dict.items() if k in model_netG_dict}
         model_netG_dict.update(pretrained_netG_dict)
-        model.netG.load_state_dict(model_netG_dict)  # torch.load: 加载训练好的模型 load_state_dict: 将torch.load加载出来的数据加载到net中
+        model.netG.load_state_dict(model_netG_dict)  
 
         if opt.isTrain:
             pretrained_netD_dict = state['netD_state_dict']
@@ -140,7 +140,7 @@ def load_networks(opt, model):
             pretrained_netD_dict = {k: v for k, v in pretrained_netD_dict.items() if k in model_netD_dict}
             model_netD_dict.update(pretrained_netD_dict)
             model.netD.load_state_dict(
-                model_netD_dict)  # torch.load: 加载训练好的模型 load_state_dict: 将torch.load加载出来的数据加载到net中
+                model_netD_dict)  
 
             model.optimizer_G.load_state_dict(state['optimizer_G'])
             model.optimizer_D.load_state_dict(state['optimizer_D'])
@@ -216,16 +216,6 @@ def normalization_mr(X):
     X[X > p99] = p99
     result = ((X - p2) / (p99 - p2)).astype('float')
     return result * 2 - 1
-
-def cut_edge(img):  # 把图像的非零部分用一个最小的矩形框出来 比np.where块
-    r = np.any(img, axis=(1, 2))
-    c = np.any(img, axis=(0, 2))
-    z = np.any(img, axis=(0, 1))
-
-    D_s, D_e = np.where(r)[0][[0, -1]]
-    H_s, H_e = np.where(c)[0][[0, -1]]
-    W_s, W_e = np.where(z)[0][[0, -1]]
-    return int(D_s), int(D_e), int(H_s), int(H_e), int(W_s), int(W_e)
 
 def normalization_ct(data, min_value, max_value):
     if type(data) is not np.ndarray:
