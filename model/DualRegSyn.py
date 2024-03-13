@@ -5,7 +5,6 @@ from reg_losses import *
 from model.reg_networks import Reg, SpatialTransformer
 
 class DualRegSyn(nn.Module):
-    '''改了损失函数的超参数'''
     def __init__(self, opt, SR_weight=20.0, SM_weight=10.0):
         super(DualRegSyn, self).__init__()
         self.isTrain = opt.isTrain
