@@ -21,12 +21,11 @@ parser.add_argument('--batch_size', type=int, default=2, help='input batch size'
 parser.add_argument('--depthSize', type=int, default=8, help='depth for 3d images')
 parser.add_argument('--ImageSize', type=int, default=256, help='then crop to this size')
 parser.add_argument('--Npatch', type=int, default=10, help='Npatch')
-parser.add_argument('--trainer', type=str, default='DualRegSyn', help='pix2pix | CycleGAN | ADN | UNIT | MUINT | RegGAN | DIS | UNIT | MUNIT....')    # 实际上是trainer 代表了不同的网络架构
+parser.add_argument('--trainer', type=str, default='DualRegSyn', help='pix2pix | CycleGAN | ADN | UNIT | MUINT | RegGAN | DIS | UNIT | MUNIT....')
 parser.add_argument('--max_epochs', type=int, default=200, help='# max_epoch')
 parser.add_argument('--seed', type=int, default=15, help='random seed')
 parser.add_argument('--lr_max', type=float, default=0.0002, help='initial learning rate for adam')
-parser.add_argument('--gan_mode', type=str, default='vanilla', help='the type of GAN objective. [vanilla| lsgan ｜ wgangp]. vanilla GAN loss is the cross-entropy objective used in the original GAN paper.')     # 调参可换
-
+parser.add_argument('--gan_mode', type=str, default='vanilla', help='the type of GAN objective. [vanilla| lsgan ｜ wgangp]. vanilla GAN loss is the cross-entropy objective used in the original GAN paper.')
 parser.add_argument("--image_dir", type=str, default='', help="image_dir")
 parser.add_argument('--gpu_ids', type=str, default='0', help='which gpu is used')
 parser.add_argument('--input_nc', type=int, default=1, help='# of input image channels: 3 for RGB and 1 for grayscale')
