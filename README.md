@@ -8,7 +8,7 @@
 
 ## Description
 
-This is the source code for MICCAI paper (ID: 4155) - "Boosting Medical Image Synthesis via Registration-guided Consistency and Disentanglement Learning"
+This is the source code for MICCAI paper (ID: 2212) - "Boosting Medical Image Synthesis via Registration-guided Consistency and Disentanglement Learning"
 
 ## Requirements
 
