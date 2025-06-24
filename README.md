@@ -1,8 +1,8 @@
-
 <div align="center">
 
 # Boosting Medical Image Synthesis via Registration-guided Consistency and Disentanglement Learning
 
+![overview](pic/overview.jpg)
 
 </div>
 
